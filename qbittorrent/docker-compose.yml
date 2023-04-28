@@ -9,7 +9,7 @@ services:
       - TZ=Etc/UTC
       - WEBUI_PORT=8099
     volumes:
-      - .data/config:/config
+      - ./data/config:/config
       - ./downloads:/downloads
     restart: unless-stopped
     networks:

@@ -11,7 +11,7 @@ services:
       - RPC_PORT=6800
       - LISTEN_PORT=6888
     volumes:
-      - .data/config:/config
+      - ./data/config:/config
       - ./downloads:/downloads
     restart: unless-stopped
     networks:
