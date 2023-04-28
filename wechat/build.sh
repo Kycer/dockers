@@ -1,0 +1,1 @@
+docker build -t kycer/wechat -f wechat.Dockerfile .

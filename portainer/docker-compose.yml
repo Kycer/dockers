@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  worker:
+    image: portainer/portainer:latest
+    container_name: portainer
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+        portainer-net:
+          ipv4_address: 10.10.10.200
+
+networks:
+  portainer-net:
+    external: true
+    name: macnet
