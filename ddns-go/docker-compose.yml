@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  ddns:
+    image: 'jeessy/ddns-go:latest'
+    restart: always
+    volumes:
+      - ./data:/root
+    container_name: ddns-go
+    networks:
+      ddns-net:
+        ipv4_address: 10.10.10.203
+
+networks:
+  ddns-net:
+    external: true
+    name: macnet
