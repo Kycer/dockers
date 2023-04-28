@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  alist:
+    image: 'xhofe/alist:latest'
+    restart: always
+    volumes:
+      - ./data:/opt/alist/data
+    ports:
+      - '5244:5244'
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=022
+    container_name: alist
+    networks:
+      alist-net:
+        ipv4_address: 10.10.10.202
+
+networks:
+  alist-net:
+    external: true
+    name: macnet
