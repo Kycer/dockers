@@ -9,11 +9,11 @@ services:
       - ./dnsmasq.conf:/etc/dnsmasq.conf:ro
     restart: always
     networks:
-      qbittorrent-net:
+      dnsmasq-net:
         ipv4_address: 10.10.10.250
 
 
 networks:
-  qbittorrent-net:
+  dnsmasq-net:
     external: true
     name: macnet
